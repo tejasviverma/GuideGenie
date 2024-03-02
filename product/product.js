@@ -25,3 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.querySelector('.messages-section').classList.remove('show');
 	});
 	});
+	
+      // JavaScript code to get current date
+      var currentDate = new Date();
+      
+      // Format the date as you want
+      var formattedDate = currentDate.toDateString(); // Example: "Wed Mar 03 2024"
+  
+      // Display the date in an HTML element
+      document.getElementById("currentDate").innerHTML = formattedDate;
