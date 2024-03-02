@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABC</title>
     <link rel="stylesheet" href="./loginPage.css">
+    <link rel="icon" href="logo.png" type="image/png">
 </head>
 <body style="display:flex; align-items:center; justify-content:center;">
 <div class="login-page">
   <div class="form">
     <form class="register-form" method="POST">
       <h2>Register</h2>
-      <input type="text" placeholder="Full Name *" required/>
-      <input type="text" placeholder="Username *" required/>
-      <input type="email" placeholder="Email *" required/>
-      <input type="password" placeholder="Password *" required/>
-      <a class="btn" href="./registed.html">
+      <input type="text" placeholder="Full Name *" required id="name"/>
+      <input type="text" placeholder="Username *" required id="user"/>
+      <input type="email" placeholder="Email *" required id="email"/>
+      <input type="password" placeholder="Password *" required id="pass"/>
+      <a class="btn" href="./registed.html" id="submit">
         <span></span>
         <span></span>
         <span></span>
@@ -41,7 +42,7 @@
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="./loginPage.js"></script>
+<script src="loginPage.js"></script>
 </body>
 </html>
 
