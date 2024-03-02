@@ -6,7 +6,8 @@ body{
  margin:0;
  padding:0;
  font-family: sans-serif;
- background: linear-gradient(#30142b, #2772a1);
+ background: -webkit-linear-gradient(to right, #2167ad, #264453);
+  background: linear-gradient(to right, #051c33, #6eb3d5);
 }
 .login-page {
   width: 400px;
