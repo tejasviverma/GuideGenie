@@ -5,7 +5,7 @@ $('.message a').click(function(){
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  import { getDatabase, red, get, set, child } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+  import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,7 +22,7 @@ $('.message a').click(function(){
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
-//   get ref to datat services
+//   get ref to data services
   const db = getDatabase(ref);
 
   document.getElementById("submit").addEventListener('click', function(e){

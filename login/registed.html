@@ -6,7 +6,21 @@
         <link rel="stylesheet" href="./loginPage.css">
     </head>
     <body>
-        <h1>hello</h1>
-        <a href="../index.html">back to home page.</a>
+        <form class="register-form" method="POST">
+            <h2>Register</h2>
+            <input type="text" placeholder="Full Name *" required id="name"/>
+            <input type="text" placeholder="Username *" required id="user"/>
+            <input type="email" placeholder="Email *" required id="email"/>
+            <input type="password" placeholder="Password *" required id="pass"/>
+            <a class="btn" href="./registed.html">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Create
+            </a>
+            <p class="message">Already registered? <a href="./loginPage.html">Sign In</a></p>
+          </form>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </body>
 </html>

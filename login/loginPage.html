@@ -13,23 +13,23 @@
   <div class="form">
     <form class="register-form" method="POST">
       <h2>Register</h2>
-      <input type="text" placeholder="Full Name *" required id="name"/>
-      <input type="text" placeholder="Username *" required id="user"/>
-      <input type="email" placeholder="Email *" required id="email"/>
-      <input type="password" placeholder="Password *" required id="pass"/>
-      <a class="btn" href="./registed.html" id="submit">
+      <input type="text" placeholder="Full Name *" id="name"/>
+      <input type="text" placeholder="Username *" id="user"/>
+      <input type="email" placeholder="Email *" id="email"/>
+      <input type="password" placeholder="Password *" id="pass"/>
+      <a class="btn" href="./registed.html">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         Create
       </a>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
+      <p class="message">Already registered? <a href="./loginPage.html">Sign In</a></p>
     </form>
     <form class="login-form" method="post">
       <h2></i> Login</h2>
-      <input type="text" placeholder="Username" required />
-      <input type="password" placeholder="Password" required/>
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password"/>
       <a class="btn" href="../product/product.html">
         <span></span>
         <span></span>
@@ -37,12 +37,52 @@
         <span></span>
         Sign in
       </a>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+      <p class="message" id="create_button">Not registered? <a href="#" id="create2">Create an account</a></p>
     </form>
   </div>
 </div>
+<script type="module">
+      $('.message a').click(function(){
+          $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+       });
+     
+     
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+     
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAD6Uj40KwrKsdeEmUGsvo8lNwebuc0OYo",
+          authDomain: "guidegenie-a2177.firebaseapp.com",
+          projectId: "guidegenie-a2177",
+          storageBucket: "guidegenie-a2177.appspot.com",
+          messagingSenderId: "820065377823",
+          appId: "1:820065377823:web:a12d42fde4c173827a3f2a"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      
+      //   get ref to data services
+        const db = getDatabase(ref);
+      
+        document.getElementById("submit").addEventListener('click', function(e){
+        
+          set(ref(db, 'name/' + document.getElementById("name").value),{
+              FullName: document.getElementById("name").value,
+              UserName: document.getElementById("user").value,
+              Email: document.getElementById("email").value,
+              Password: document.getElementById("pass").value,
+          
+          });
+              alert("Login Successful");
+        })
+</script>
+<!-- <script src="loginPage.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="loginPage.js"></script>
 </body>
 </html>
 
