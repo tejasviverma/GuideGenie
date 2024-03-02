@@ -17,7 +17,7 @@
       <input type="text" placeholder="Username *" id="user"/>
       <input type="email" placeholder="Email *" id="email"/>
       <input type="password" placeholder="Password *" id="pass"/>
-      <a class="btn" href="./registed.html">
+      <a class="btn" href="product/product.html" id="submit">
         <span></span>
         <span></span>
         <span></span>
@@ -67,15 +67,16 @@
         const app = initializeApp(firebaseConfig);
       
       //   get ref to data services
-        const db = getDatabase(ref);
+        const db = getDatabase(app);
       
         document.getElementById("submit").addEventListener('click', function(e){
+          e.preventDefault();
         
           set(ref(db, 'name/' + document.getElementById("name").value),{
               FullName: document.getElementById("name").value,
               UserName: document.getElementById("user").value,
               Email: document.getElementById("email").value,
-              Password: document.getElementById("pass").value,
+              Password: document.getElementById("pass").value
           
           });
               alert("Login Successful");
