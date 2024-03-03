@@ -475,6 +475,7 @@ flex: 1;
 --main-color-card: #dbf6fd;
 border-radius: 30px;
 padding: 16px;
+height: 40vh;
 background-color: var(--main-color-card);
 }
 .project-box-header {
